@@ -1,6 +1,6 @@
 ---
 services: cosmos-db
-platforms: python
+platforms: php
 author: luisbosquez
 ---
 
