@@ -1,57 +1,52 @@
-# Project Name
+---
+services: cosmos-db
+platforms: python
+author: luisbosquez
+---
 
-(short, 1-3 sentenced, description of the project)
+# Developing a PHP Gremlin app using Azure Cosmos DB
+Azure Cosmos DB is a globally distributed multi-model database. One of the supported APIs is the Graph (Gremlin) API, which provides a graph data model with [Gremlin query/traversals](https://tinkerpop.apache.org/gremlin.html). This sample shows you how to use the Azure Cosmos DB with the Graph API to store and access data from a PHP application.
 
-## Features
+## Running this sample
 
-This project framework provides the following features:
+* Before you can run this sample, you must have the following prerequisites:
 
-* Feature 1
-* Feature 2
-* ...
+   * An active Azure account. If you don't have one, you can sign up for a [free account](https://azure.microsoft.com/free/). Alternatively, you can use the [Azure Cosmos DB Emulator](https://azure.microsoft.com/documentation/articles/documentdb-nosql-local-emulator) for this tutorial.
+   * PHP 5.6+
+   * composer (https://getcomposer.org/doc/00-intro.md)
 
-## Getting Started
+* Then, clone this repository using `git clone https://github.com/Azure-Samples/azure-cosmos-db-graph-php-getting-started.git`
 
-### Prerequisites
+* Next, substitute the endpoint and authorization key in the `connect.php`, on line 8, with your Cosmos DB account's values:
 
-(ideally very short, if any)
+```php
+$db = new Connection([
+    'host' => 'your_server_address',
+    'username' => '/dbs/<db>/colls/<coll>',
+    'password' => 'your_primary_key'
+    ,'port' => '443'
 
-- OS
-- Library version
-- ...
+    // Required parameter
+    ,'ssl' => TRUE
+]);
+```
 
-### Installation
+| Setting | Suggested Value | Description |
+| ------- | --------------- | ----------- |
+| your_server_address   | [***.graphs.azure.com] | This is the Gremlin URI value on the Overview page of the Azure portal, in square brackets, with the trailing :443/ removed.  This value can also be retrieved from the Keys tab, using the URI value by removing https://, changing documents to graphs, and removing the trailing :443/. |
+| port | 443 | Set the port to 443 |
+| username | `/dbs/<db>/colls/<coll>` | The resource of the form `/dbs/<db>/colls/<coll>` where `<db>` is your database name and `<coll>` is your collection name. |
+| password | Your primary key | This is your primary key, which you can retrieve from the Keys page of the Azure portal, in the Primary Key box. Use the copy button on the left side of the box to copy the value. |
 
-(ideally very short)
+* From a command prompt or shell, run `composer install` from the top-level directory, where the `composer.json` file is, to get and resolve dependencies.
 
-- npm install [package name]
-- mvn install
-- ...
+* From a command prompt or shell, run `php connect.php` to run the application.
 
-### Quickstart
-(Add steps to get up and running quickly)
+## About the code
+The code included in this sample is intended to get you quickly started with a PHP application that connects to Azure Cosmos DB with the Graph (Gremlin) API.
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+## More information
 
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)
+- [Azure Cosmos DB : Graph API](https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction)
+- [Gremlin PHP](https://github.com/PommeVerte/gremlin-php)
