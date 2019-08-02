@@ -34,10 +34,10 @@ function dropGraph($db)
 }
 
 $_queries_insert_vertices = array(
-    "Adding Thomas" => "g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44)",
-    "Adding Mary" => "g.addV('person').property('id', 'mary').property('firstName', 'Mary').property('lastName', 'Andersen').property('age', 39)",
-    "Adding Ben" => "g.addV('person').property('id', 'ben').property('firstName', 'Ben').property('lastName', 'Miller')",
-    "Adding Robin" => "g.addV('person').property('id', 'robin').property('firstName', 'Robin').property('lastName', 'Wakefield')"
+    "Adding Thomas" => "g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44).property('pk', 'pk')",
+    "Adding Mary" => "g.addV('person').property('id', 'mary').property('firstName', 'Mary').property('lastName', 'Andersen').property('age', 39).property('pk', 'pk')",
+    "Adding Ben" => "g.addV('person').property('id', 'ben').property('firstName', 'Ben').property('lastName', 'Miller').property('pk', 'pk')",
+    "Adding Robin" => "g.addV('person').property('id', 'robin').property('firstName', 'Robin').property('lastName', 'Wakefield').property('pk', 'pk')"
 
 );
 
