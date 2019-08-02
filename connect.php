@@ -6,7 +6,7 @@ error_reporting(E_ALL ^ E_WARNING);
 
 // Write your own configuration values here
 $db = new Connection([
-    'host' => '<your_server_address>.graphs.azure.com',
+    'host' => '<your_server_address>.gremlin.cosmosdb.azure.com',
     'username' => '/dbs/<db>/colls/<coll>',
     'password' => 'your_primary_key'
     ,'port' => '443'
