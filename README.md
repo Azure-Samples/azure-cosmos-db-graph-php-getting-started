@@ -1,7 +1,11 @@
 ---
-services: cosmos-db
-platforms: php
-author: luisbosquez
+page_type: sample
+languages:
+- php
+products:
+- azure
+description: "Azure Cosmos DB is a globally distributed multi-model database."
+urlFragment: azure-cosmos-db-graph-php-getting-started
 ---
 
 # Developing a PHP Gremlin app using Azure Cosmos DB
